@@ -41,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
   console.log(vShader);
   console.log(fShader);
 
-  const texture = new THREE.TextureLoader().load("./dist/asset/textures/HexPulse.png");
+  const texture = new THREE.TextureLoader().load("/dist/asset/textures/HexPulse.png");
   const geometry = new THREE.SphereGeometry();
   
   const uniforms = {
