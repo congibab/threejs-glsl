@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "@types/three": "^0.131.0",
+    "glsl-noise": "0.0.0",
     "glslify": "^7.1.1",
     "three": "^0.131.3",
     "webpack-glsl-loader": "^1.0.1"

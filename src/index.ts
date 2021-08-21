@@ -4,8 +4,11 @@ import Stats from 'three/examples/jsm/libs/stats.module';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GUI } from 'three/examples/jsm/libs/dat.gui.module';
 
-import vShader from './glsl/test.vert';
-import fShader from './glsl/test.frag';
+import Fresnel_vShader from './glsl/Fresnel.vert';
+import Fresnel_fShader from './glsl/Fresnel.frag';
+import dissolve_vShader from './glsl/dissolve.vert';
+import dissolve_fShader from './glsl/dissolve.frag';
+
 
 import { Test } from './Test';
 
@@ -38,9 +41,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const axesHelper = new THREE.AxesHelper(5);
   scene.add(axesHelper);
 
-  console.log(vShader);
-  console.log(fShader);
-
   const texture = new THREE.TextureLoader().load("/dist/asset/textures/HexPulse.png");
   const geometry = new THREE.SphereGeometry();
   
@@ -52,8 +52,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const material = new THREE.ShaderMaterial({
     uniforms: uniforms,
     transparent : true,
-    vertexShader: vShader,
-    fragmentShader: fShader
+    //vertexShader: vShader,
+    //fragmentShader: fShader
+    vertexShader: dissolve_vShader,
+    fragmentShader: dissolve_fShader
   });
   const shpere = new THREE.Mesh(geometry, material);
   scene.add(shpere);
