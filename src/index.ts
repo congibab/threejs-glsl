@@ -47,13 +47,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const axesHelper = new THREE.AxesHelper(5);
   scene.add(axesHelper);
 
-  const texture1 = new THREE.TextureLoader().load("/dist/asset/textures/HexPulse.png");
-  const texture2 = new THREE.TextureLoader().load("/dist/asset/textures/UV_Grid_Sm.jpg");
-  const normal_texture = new THREE.TextureLoader().load("/dist/asset/textures/normal.jpg");
+  const texture1 = new THREE.TextureLoader().load("./asset/textures/HexPulse.png");
+  const texture2 = new THREE.TextureLoader().load("./asset/textures/UV_Grid_Sm.jpg");
+  const normal_texture = new THREE.TextureLoader().load("./asset/textures/normal.jpg");
   normal_texture.wrapS = THREE.RepeatWrapping;
   normal_texture.wrapT = THREE.RepeatWrapping;
 
-  const noise = new THREE.TextureLoader().load("/dist/asset/textures/noise/noise_texture_0006.png");
+  const noise = new THREE.TextureLoader().load("./asset/textures/noise/noise_texture_0006.png");
   noise.wrapS = THREE.RepeatWrapping;
   noise.wrapT = THREE.RepeatWrapping;
 
@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let teapot_attribute: BufferAttribute;
   const loader = new GLTFLoader();
   loader.load(
-    '/dist/asset/models/teapot.gltf',
+    './asset/models/teapot.gltf',
 
     function (gltf) {
       const model = gltf.scene;
@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
   )
 
   loader.load(
-    '/dist/asset/models/bunny.gltf',
+    './asset/models/bunny.gltf',
 
     function (gltf) {
       const model = gltf.scene;
