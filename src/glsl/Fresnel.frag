@@ -20,5 +20,6 @@ float Fresnel(vec3 Normal,vec3 ViewDir,float Power)
 void main()
 {
     float _FresnelEffect=Fresnel(vNormal,ViewDir,2.);
-    gl_FragColor=vec4(0.,1.,1.,_FresnelEffect)*texture2D(texture1,fract(vUv*2.));
+    vec3 color = vec3(0.1098, 0.6157, 0.8118);
+    gl_FragColor=vec4(color,_FresnelEffect)*texture2D(texture1,fract(vUv*2.));
 }
